@@ -1,0 +1,232 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.container {
+  background-color: #f7f7f7;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  padding: 5rem;
+  color: #777777;
+  background-color: #f7f7f7;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(to right, rgba(186, 133, 84, 0.7) 0%, rgba(1, 1, 1, 0.7) 100%), url("../img/header-background.jpg") center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+.header__logo {
+  position: absolute;
+  width: 5.6rem;
+  height: auto;
+  top: 5rem;
+  left: 5rem;
+}
+.header__box {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header__box_centered {
+  margin: auto;
+}
+.header .title-first {
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+.header .title-first__main {
+  display: block;
+  font-weight: 800;
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: LeftToRight 2s 1s ease;
+  backface-visibility: hidden;
+}
+.header .title-first__secondary {
+  display: block;
+  font-weight: 100;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  animation: RightToLeft 2s 1s ease;
+  backface-visibility: hidden;
+}
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  position: relative;
+  padding: 1.5rem 4rem;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  color: #777;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.btn:hover::after {
+  opacity: 0;
+  transform: scale(1.5, 1.7);
+}
+.btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.6s;
+}
+.btn_animated {
+  animation: BtnToUp 2s 0.7s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes BtnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes LeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
