@@ -1,0 +1,24 @@
+@use "../variables" as *;
+
+.btn-text {
+  &:link, &:visited {
+    display: inline-block;
+    font-weight: 700;
+    font-size: $font-size-paragraph;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: $color-brown-light;
+    padding: 1rem;
+    border-bottom: .1rem solid $color-brown-dark;
+    transition: all .3s ease;
+  }
+  &:hover {
+    background-color: $color-brown-light;
+    color: $color-white;
+    box-shadow: $box-shadow;
+    transform: translateY(-.2rem);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}

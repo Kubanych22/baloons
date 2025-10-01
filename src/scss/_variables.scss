@@ -4,7 +4,16 @@ $color-brown-dark: #a14f03;
 $color-black: #000000;
 $color-white: #ffffff;
 
+$font-size-paragraph: 1.6rem;
+$font-size-paragraph-h2: 3.6rem;
+$font-size-paragraph-h3: 2rem;
+
 $box-shadow:(0 0.4rem 0.4rem rgba(0, 0, 0, 0.3));
+$shadow-h2: 0 .4rem .4rem rgba($color-black, .25);
+
+$margin-vertical-big: 8rem;
+$grid-width: 114rem;
+$gutter-horizontal: 6rem;
 
 @function multiply($a, $b) {
   @return $a * $b
@@ -15,4 +24,12 @@ $box-shadow:(0 0.4rem 0.4rem rgba(0, 0, 0, 0.3));
   text-decoration: none;
   text-transform: uppercase;
   color: $color;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
