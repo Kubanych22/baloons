@@ -1,0 +1,36 @@
+@use "../variables" as *;
+
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url("/src/img/header-background.jpg") center / cover no-repeat ;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+  &__logo {
+    position: absolute;
+    width: 5.6rem;
+    height: auto;
+    top: 5rem;
+    left: 5rem;
+  }
+
+  &__box {
+    // центрирование с помощью transform - translate
+    //position: absolute;
+    //width: 100%;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    text-align: center;
+    ///* центрирование флексами - родитель
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    //*/
+    &_centered {
+      ///* центрирование флексами - дочерний элемент, тот который центрируется
+      margin: auto;
+      //*/
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "../variables" as *;
+
+.title-first {
+  line-height: 1.2;
+  color: $color-white;
+  margin-bottom: 5rem;
+  &__main {
+    display: block;
+    font-weight: 800;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: LeftToRight 2s 1s ease;
+    backface-visibility: hidden;
+  }
+
+  &__secondary {
+    display: block;
+    font-weight: 100;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    animation: RightToLeft 2s 1s ease;
+    backface-visibility: hidden;
+  }
+}
