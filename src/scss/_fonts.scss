@@ -1,41 +1,13 @@
 @font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?2hm2ga');
+  src:  url('../fonts/icomoon.eot?2hm2ga#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?2hm2ga') format('truetype'),
+  url('../fonts/icomoon.woff?2hm2ga') format('woff'),
+  url('../fonts/icomoon.svg?2hm2ga#icomoon') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-300.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-700.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-900.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter-300.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -64,7 +36,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto-Light.woff2') format('woff2');
+  src: url('../fonts/Roboto-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;

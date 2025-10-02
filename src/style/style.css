@@ -1,37 +1,10 @@
 @font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?2hm2ga");
+  src: url("../fonts/icomoon.eot?2hm2ga#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?2hm2ga") format("truetype"), url("../fonts/icomoon.woff?2hm2ga") format("woff"), url("../fonts/icomoon.svg?2hm2ga#icomoon") format("svg");
+  font-weight: normal;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-300.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-900.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-300.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Roboto";
@@ -56,7 +29,7 @@
 }
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Light.woff2") format("woff2");
+  src: url("../fonts/Roboto-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -75,6 +48,36 @@
   font-style: normal;
   font-display: swap;
 }
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Vector:before {
+  content: "\e900";
+}
+
+.icon-Vector-1:before {
+  content: "\e901";
+}
+
+.icon-Vector-2:before {
+  content: "\e902";
+}
+
+.icon-Vector-3:before {
+  content: "\e903";
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -380,7 +383,137 @@ body {
 }
 
 .section-about {
-  padding-top: 8rem;
+  padding: 8rem 0 15rem;
+}
+
+.section-adventure {
+  padding: 21rem 0;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../../img/section-adventure.jpg") center/cover no-repeat;
+  transform: skewY(7deg);
+}
+.section-adventure > * {
+  transform: skewY(-7deg);
+}
+
+.section-tour {
+  padding: 21rem 0;
+}
+
+.adventure-card {
+  padding: 2.5rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.adventure-card:hover {
+  transform: scale(1.05);
+}
+.adventure-card__icon {
+  font-size: 6rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.card-tour {
+  height: 50rem;
+  perspective: 150rem;
+  position: relative;
+}
+.card-tour__side {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.7s ease-in-out;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.card-tour__side_back {
+  background-color: green;
+  transform: rotateY(180deg);
+  background: linear-gradient(170deg, #ba8554, #a14f03);
+}
+.card-tour:hover .card-tour__side_front {
+  transform: rotateY(-180deg);
+}
+.card-tour:hover .card-tour__side_back {
+  transform: rotateY(0);
+}
+.card-tour__img {
+  background-blend-mode: hard-light;
+  height: 21rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  margin-bottom: 7rem;
+}
+.card-tour__img_1 {
+  background: #a14f03 url("../../img/card-1.jpg") center/cover no-repeat;
+}
+.card-tour__img_2 {
+  background: #a14f03 url("../../img/card-2.jpg") center/cover no-repeat;
+}
+.card-tour__img_3 {
+  background: #a14f03 url("../../img/card-3.jpg") center/cover no-repeat;
+}
+.card-tour__title {
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  top: 17rem;
+  right: 0;
+}
+.card-tour__span {
+  background: linear-gradient(90deg, #ba8554, #a14f03);
+  padding: 1rem 2rem 0.3rem 2rem;
+}
+.card-tour__span_2 {
+  position: absolute;
+  top: 3.4rem;
+  right: 0;
+  padding-bottom: 1rem;
+}
+.card-tour__descr ul {
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+}
+.card-tour__descr ul li {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  display: inline-block;
+  border-bottom: 0.1rem solid #777777;
+}
+.card-tour__descr ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.card-tour__backSide-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card-tour__text_1 {
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.card-tour__text_2 {
+  font-weight: 500;
+  font-size: 6rem;
+  letter-spacing: 0.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

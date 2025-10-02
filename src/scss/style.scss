@@ -1,6 +1,7 @@
 //@use "normalize";
 
 @use "fonts";
+@use "icon-font";
 @use 'base-style';
 @use "./base/animations";
 @use "./base/typography";
@@ -11,6 +12,10 @@
 @use "./layout/grids";
 @use "./layout/header";
 @use "./pages/home";
+@use "./components/adventure-card";
+@use "./components/tour-card";
+
+
 
 
 
