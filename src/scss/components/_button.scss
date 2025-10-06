@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 .btn {
-  &:link, &:visited {
+  &, &:link, &:visited {
     @include style-link($color-gray);
     position: relative;
     padding: 1.5rem 4rem;
@@ -11,6 +11,7 @@
     border-radius: 5rem;
     background-color: $color-white;
     transition: all .3s ease;
+    border: none;
   }
   &:hover {
     transform: translateY(-0.4rem);
@@ -40,5 +41,13 @@
   &_animated {
     animation: BtnToUp 2s .7s ease-out;
     animation-fill-mode: backwards;
+  }
+}
+
+.btn_brown {
+  background-color: $color-brown-dark;
+  color: $color-white;
+  &::after {
+    background-color: $color-brown-dark;
   }
 }

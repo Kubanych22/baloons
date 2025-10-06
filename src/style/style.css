@@ -222,7 +222,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -235,6 +235,7 @@ body {
   border-radius: 5rem;
   background-color: #ffffff;
   transition: all 0.3s ease;
+  border: none;
 }
 .btn:hover {
   transform: translateY(-0.4rem);
@@ -264,6 +265,14 @@ body {
 .btn_animated {
   animation: BtnToUp 2s 0.7s ease-out;
   animation-fill-mode: backwards;
+}
+
+.btn_brown {
+  background-color: #a14f03;
+  color: #ffffff;
+}
+.btn_brown::after {
+  background-color: #a14f03;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -604,7 +613,7 @@ body {
 
 .book {
   height: 50rem;
-  background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 55%, rgba(186, 133, 84, 0.8) 55%, rgba(161, 79, 3, 0.9) 100%), url("../../img/bg-form.jpg") center/cover no-repeat;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 57%, rgba(186, 133, 84, 0.8) 57%, rgba(161, 79, 3, 0.9) 100%), url("../../img/bg-form.jpg") center/cover no-repeat;
   box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -616,7 +625,10 @@ body {
   padding-left: 5rem;
 }
 .form__group:not(:last-child) {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+}
+.form__group:nth-child(4) {
+  margin-bottom: 4rem;
 }
 .form__label {
   display: block;
@@ -625,7 +637,7 @@ body {
   letter-spacing: 0.2rem;
   color: #777777;
   margin-left: 1.5rem;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .form__input {
   font-size: 1.6rem;
@@ -636,7 +648,7 @@ body {
   border: none;
   border-bottom: 0.3rem solid transparent;
   border-radius: 0.5rem;
-  width: 55%;
+  width: 75%;
   margin-bottom: 1rem;
 }
 .form__input:focus {
@@ -651,6 +663,78 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-3.8rem);
+}
+.form__group-radio {
+  width: 45%;
+  display: inline-block;
+}
+.form__input-radio {
+  display: none;
+}
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+}
+.form__button-radio {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #a14f03;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #a14f03;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s all;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
+}
+
+.footer {
+  padding: 8rem;
+  background-color: #333333;
+}
+.footer__logo {
+  width: 12rem;
+}
+.footer__list {
+  list-style: none;
+  text-align: center;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  color: #777777;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+.footer__link:hover {
+  transform: rotate(5deg) scale(1.2);
+  color: #a14f03;
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=style.css.map */
