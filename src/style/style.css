@@ -103,6 +103,8 @@ body {
 
 .container {
   background-color: #f7f7f7;
+  position: relative;
+  z-index: 0;
 }
 
 @keyframes BtnToUp {
@@ -182,6 +184,9 @@ body {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
   text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
+.title-secondary_white {
+  color: #ffffff;
+}
 
 .title-third {
   font-weight: 700;
@@ -217,7 +222,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -230,6 +235,7 @@ body {
   border-radius: 5rem;
   background-color: #ffffff;
   transition: all 0.3s ease;
+  border: none;
 }
 .btn:hover {
   transform: translateY(-0.4rem);
@@ -259,6 +265,14 @@ body {
 .btn_animated {
   animation: BtnToUp 2s 0.7s ease-out;
   animation-fill-mode: backwards;
+}
+
+.btn_brown {
+  background-color: #a14f03;
+  color: #ffffff;
+}
+.btn_brown::after {
+  background-color: #a14f03;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -362,7 +376,7 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../../img/header-background.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7)), url("../../img/header-background.jpg") center/cover no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 .header__logo {
@@ -388,7 +402,7 @@ body {
 
 .section-adventure {
   padding: 21rem 0;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../../img/section-adventure.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7)), url("../../img/section-adventure.jpg") center/cover no-repeat;
   transform: skewY(7deg);
 }
 .section-adventure > * {
@@ -396,7 +410,18 @@ body {
 }
 
 .section-tour {
-  padding: 21rem 0;
+  padding-top: 21rem;
+  margin-bottom: 8rem;
+}
+
+.section-feedBack {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.section-book {
+  padding: 10rem;
+  background: linear-gradient(90deg, #ba8554, #a14f03);
 }
 
 .adventure-card {
@@ -514,6 +539,202 @@ body {
   font-weight: 500;
   font-size: 6rem;
   letter-spacing: 0.2rem;
+}
+
+.feedBack-card {
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 6rem;
+  transform: skewX(345deg);
+}
+.feedBack-card > * {
+  transform: skewX(-345deg);
+}
+.feedBack-card__img {
+  width: 15rem;
+  height: 15rem;
+  background-color: green;
+  float: left;
+  border-radius: 50%;
+  shape-outside: circle(50% at 50% 50%);
+  margin-right: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+.feedBack-card__img img {
+  height: 100%;
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+.feedBack-card__name {
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.feedBack-card:hover .feedBack-card__name {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.feedBack-card:hover img {
+  transform: scale(1);
+  filter: blur(0.3rem) brightness(70%);
+}
+
+.bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.bg-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.book {
+  height: 50rem;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 57%, rgba(186, 133, 84, 0.8) 57%, rgba(161, 79, 3, 0.9) 100%), url("../../img/bg-form.jpg") center/cover no-repeat;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.form {
+  width: 60%;
+  padding-top: 5rem;
+  padding-left: 5rem;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__group:nth-child(4) {
+  margin-bottom: 4rem;
+}
+.form__label {
+  display: block;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.form__input {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  padding: 2rem 0 2rem 2rem;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  border-radius: 0.5rem;
+  width: 75%;
+  margin-bottom: 1rem;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 0.3rem solid #66d763;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+.form__input:focus:invalid {
+  border-bottom: 0.3rem solid #D76363;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3.8rem);
+}
+.form__group-radio {
+  width: 45%;
+  display: inline-block;
+}
+.form__input-radio {
+  display: none;
+}
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+}
+.form__button-radio {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #a14f03;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #a14f03;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s all;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
+}
+
+.footer {
+  padding: 8rem;
+  background-color: #333333;
+}
+.footer__logo {
+  width: 12rem;
+}
+.footer__list {
+  list-style: none;
+  text-align: center;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  color: #777777;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+.footer__link:hover {
+  transform: rotate(5deg) scale(1.2);
+  color: #a14f03;
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=style.css.map */
